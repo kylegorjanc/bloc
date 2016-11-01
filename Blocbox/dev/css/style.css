@@ -272,6 +272,10 @@ header .hero img {
   list-style-type: none;
  }
 
+ .testimonials ul li:nth-child(2n) {
+  margin-top:20px;
+ }
+
 .testimonials blockquote {
   color: #ffffff;
   text-align: left;
