@@ -79,6 +79,12 @@ p {
    }
  }
 
+ @media (min-width: 1824px) {
+  .container {
+    width: 1755px;
+  }
+}
+
  /*  END MEDIA QUERIES  */
 
  /* HEADER */
