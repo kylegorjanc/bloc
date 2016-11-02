@@ -431,7 +431,9 @@ footer {
    margin-bottom: 15px;
  }
 
-
+ .left-nav .items ul li.active {
+   background-color: #3498DB;
+ }
  
  .left-nav .items ul li a {
    color:#FFFFFF;
