@@ -15,15 +15,21 @@
 
             init : function(options) {
                 this.dropit.settings = $.extend({}, this.dropit.defaults, options);
+
                 return this.each(function() {
                     var $el = $(this),
                          el = this,
                          settings = $.fn.dropit.settings;
-
+                    if ($el.hasClass('menu-up')) {
+                        $el.addClass('dropit')
+                        .find('>'+ settings.triggerParentEl +':has('+ settings.submenuEl +')').addClass('dropit-trigger')
+                        .find(settings.submenuEl).addClass('dropit-submenu dropit-up-submenu').hide();
+                    } else {
                     // Hide initial submenus
                     $el.addClass('dropit')
                     .find('>'+ settings.triggerParentEl +':has('+ settings.submenuEl +')').addClass('dropit-trigger')
-                    .find(settings.submenuEl).addClass('dropit-submenu').hide();
+                    .find(settings.submenuEl).addClass('dropit-submenu dropit-down-submenu').hide();
+                    }
 
                     // Open on click
                     $el.off(settings.action).on(settings.action, settings.triggerParentEl +':has('+ settings.submenuEl +') > '+ settings.triggerEl +'', function(){
@@ -93,5 +99,7 @@
     };
 
     $.fn.dropit.settings = {};
+
+
 
 })(jQuery);
